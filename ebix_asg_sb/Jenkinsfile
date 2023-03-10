@@ -1,10 +1,10 @@
 node{
 
-   def tomcatWeb = 'C:\\Users\\mohan.patil\\Downloads\\apache-tomcat-8.5.87\\apache-tomcat-8.5.87\\webapps'
+   def tomcatWeb = 'C:\\Users\\mohan.patil\\Desktop\\mp_jen\\jenk\\ebix_asg_sb'
    def tomcatBin = 'C:\\Users\\mohan.patil\\Downloads\\apache-tomcat-8.5.87\\apache-tomcat-8.5.87\\bin'
    def tomcatStatus = ''
    stage('SCM Checkout'){
-     git 'https://github.com/patil-mohan/jenk.git'
+     git 'https://github.com/patil-mohan/demo_app.git'
    }
    stage('Compile-Package-create-war-file'){
       // Get maven home path
