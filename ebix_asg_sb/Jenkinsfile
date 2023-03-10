@@ -23,6 +23,7 @@ node{
                )
 '''
    }*/
+   /*
    stage('Deploy to Tomcat'){
      bat "copy target\\JenkinsWar.war \"${tomcatWeb}\\JenkinsWar.war\""
    }
@@ -31,5 +32,17 @@ node{
          sleep(time:5,unit:"SECONDS") 
          bat "${tomcatBin}\\startup.bat"
          sleep(time:300,unit:"SECONDS")
+   }
+   
+   
+   stage('Deploy to Jboss'){
+     bat "copy target\\JenkinsWar.war \"${tomcatWeb}\\JenkinsWar.war\""
+   }
+ */
+      stage('Deploy to JBoss') { 
+            steps {
+                sh 'cp /var/lib/jenkins/workspace/demoTomcat/ebixproject.war /opt/jboss/standalone/deployment/ebixproject.war'
+            }
+        }
    }
 }
