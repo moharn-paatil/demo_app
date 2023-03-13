@@ -5,6 +5,9 @@ node{
    /* def tomcatStatus = '' */
    stage('SCM Checkout'){
      git 'https://github.com/patil-mohan/demo_app.git'
+       withCredentials([gitUsernamePassword(credentialsId: 'my-credentials-id', gitToolName: 'Default')]) {
+  bat 'git submodule update --init --recursive'
+	}
    }
    stage('Compile-Package-create-war-file'){
       // Get maven home path
