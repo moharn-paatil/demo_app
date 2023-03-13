@@ -4,7 +4,7 @@ node{
    def jbossBin = 'C:\\IndusJDE\\jboss-eap-7.1\\bin'
    /* def tomcatStatus = '' */
    stage('SCM Checkout'){
-     git 'https://github.com/patil-mohan/demo_app.git'
+     git 'https://github.com/patil-mohan/demo_app/tree/main/ebix_asg_sb'
    }
    stage('Compile-Package-create-war-file'){
       // Get maven home path
