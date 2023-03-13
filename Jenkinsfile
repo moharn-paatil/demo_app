@@ -5,7 +5,7 @@ node{
    /* def tomcatStatus = '' */
    stage('SCM Checkout'){
      git 'https://github.com/patil-mohan/demo_app.git'
-       withCredentials([gitUsernamePassword(credentialsId: 'my-credentials-id', gitToolName: 'Default')]) {
+       withCredentials([gitUsernamePassword(credentialsId: 'git_credentials_2023', gitToolName: 'Default')]) {
   bat 'git submodule update --init --recursive'
 	}
    }
