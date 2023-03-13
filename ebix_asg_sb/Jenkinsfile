@@ -4,7 +4,7 @@ node{
    def jbossBin = 'C:\\IndusJDE\\jboss-eap-7.1\\bin'
    /* def tomcatStatus = '' */
    stage('SCM Checkout'){
-     git 'https://github.com/patil-mohan/demo_app/tree/main/ebix_asg_sb'
+     git 'https://github.com/patil-mohan/demo_app.git'
    }
    stage('Compile-Package-create-war-file'){
       // Get maven home path
@@ -18,8 +18,8 @@ node{
  
    stage('Deploy to JBoss') { 
             steps {
-                sh 'cp C:/Users/mohan.patil/.jenkins/workspace/demoTomcat/ebixproject.war C:/IndusJDE/jboss-eap-7.1/standalone/deployments/ebixproject.war'
-            }
+                sh 'cp C:/Users/mohan.patil/.jenkins/workspace/demo_pipeline/ebixproject.war C:/IndusJDE/jboss-eap-7.1/standalone/deployments/ebixproject.war'
+            } 
         }
    stage ('Start JBoss Server') {
          sleep(time:5,unit:"SECONDS") 
